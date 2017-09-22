@@ -1,3 +1,13 @@
+
+/*********************************************************************************
+ *Author: Andrew Kuklinski
+ *Class: ECEN 5813 - Embedded System Programming
+ *Desrcption: hw3, problem 3.3, reverse function().  accepts string and length
+ *            and outputs the reverse.  3 function calls with test cases are 
+ *            are provided in homework
+ *Due: 9-22-2017
+**********************************************************************************/
+
 #include <stdio.h>
 
 
@@ -62,7 +72,7 @@ char reverse(char * str, int length)
   
   ptrHead = str;
   testPtr = testArray;
-
+  /*prints out the original string*/
   printf("\noriginal string: ");
   for(int i=0; length > i ; i++)
   {
@@ -77,7 +87,7 @@ char reverse(char * str, int length)
     testPtr++;
   }
 
- 
+  /*prints out the reversed string*/
   printf("\nreverse string : ");
   for(int i=0;length > i; i++)
   {
@@ -93,15 +103,13 @@ char reverse(char * str, int length)
   }
   
   
-  //compares the flipped str array with original state of str array
-  //returns 1 if opposite ends dont match as being read through
+  /*compares the flipped str array with original state of str array
+    returns 1 if opposite ends dont match as being read through*/
   ptrHead = testArray;
   ptrTail = str + (length - 1);
 
-  
   for(int j=0; length > j;  j++)
   {
-
     if(*ptrHead != *ptrTail)
     {
       printf("Array reversal failed!\n");
